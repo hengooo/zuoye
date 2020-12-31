@@ -1,25 +1,30 @@
 #include<stdio.h>
 #include<string.h>
-int i,j,k,d;
-double average(char a[],int n)
-{double sum=0;
-for(i=0;i<n;i++)
-{char c[10]={"n/a"};
-k=strcmp(c,a);
-if(k=0)
-{sscanf(a,"%d",&d);
-sum+=d;}
-}
-double re=sum/n;
-return re;
-}
 int main(){
 int N;
-char b[100];
+double sum,average;
+int i,j,k,s=0;
+int b[100];
+char ti[100][100];
+char c[10]={"n/a"};
 scanf("%d",&N);
-for(j=0;j<N&&1<=N&&N<=100;j++)
-{scanf("%s",&b);
-average(b,N);}
-printf("%.2f",average(b,N));
+for(i=0;i<N;i++)
+{scanf("%s",&ti[i]) ;
+k=strcmp(ti[i],c);
+if(k!=0)
+{for(j=0;j<strlen(ti[i]);j++)
+ {if(ti[i][j]=='-')
+  {b[i]=b[i]*10+ti[i][j]-'0'; //将char型转化为int型 
+  b[i]=-b[i];}                //int型的数组=char型数组-'0' 
+  else
+  {b[i]=b[i]*10+ti[i][j]-'0';
+   s++;}
+ }
+ }
+ sum+=b[i];
 }
-
+average=sum/s;
+if(s==0)
+{printf("n/a");}
+else
+printf("%.2f",average);}
