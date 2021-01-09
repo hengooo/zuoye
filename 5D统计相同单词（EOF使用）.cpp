@@ -57,5 +57,6 @@ for(i=0;i<l-1;i++)
  strcpy(max[i],max[i+1]);
  strcpy(max[i+1],max1[0]);}
  printf("%s %d",max[i+1],da);
-}}
+}
+return 0；}
 
